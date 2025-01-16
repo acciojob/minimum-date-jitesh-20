@@ -1,5 +1,9 @@
 function minDate(dates) {
-  //write you code here
+	const datePattern = /^\d{4}\/\d{2}\/\d{2}$/;
+    if (!dates.every(date => datePattern.test(date))) {
+        throw new Error("All dates must be in YYYY/MM/DD format.");
+    }
+    return dates.sort()[0];
 }
 
 // Do not change the code
